@@ -131,6 +131,6 @@ public class Harcos {
         return this.nev + " - " + "LVL: " + this.szint +
                 " EXP: " + this.tapasztalat + "/" + this.getSzintLepeshez() +
                 " - HP: " + eletero + "/" + MaxEletero() + " - DMG: " +
-                getSebzes();
+                getSebzes() + "\n";
     }
 }
