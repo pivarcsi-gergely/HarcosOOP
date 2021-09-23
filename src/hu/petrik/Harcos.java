@@ -1,5 +1,7 @@
 package hu.petrik;
 
+import javax.print.attribute.HashPrintJobAttributeSet;
+
 public class Harcos {
     private String nev;
     private int szint;
@@ -126,4 +128,11 @@ public class Harcos {
         }
     }
 
+    @Override
+    public String toString() {
+        return this.nev + " - " + "LVL: " + this.szint +
+                " EXP: " + this.tapasztalat + "/" + this.getSzintLepeshez() +
+                " - HP: " + eletero + "/" + MaxEletero() + " - DMG: " +
+                getSebzes();
+    }
 }

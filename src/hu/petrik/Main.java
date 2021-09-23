@@ -5,14 +5,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 
-    public List<Harcos> harcosLista;
+    public static List<Harcos> harcosLista;
 
-    public void beolvasas(String fajlNev){
-        this.harcosLista = new ArrayList<>();
+    public static void beolvasas(String fajlNev){
+        harcosLista = new ArrayList<>();
         try{
             FileReader fr = new FileReader(fajlNev);
             BufferedReader br = new BufferedReader(fr);
@@ -21,6 +22,7 @@ public class Main {
                 String[] adatok = sor.split(";");
                 Harcos harcosPeldany = new Harcos(adatok[0], Integer.parseInt(adatok[1]));
                 harcosLista.add(harcosPeldany);
+                sor = br.readLine();
             }
             fr.close();
             br.close();
@@ -32,7 +34,10 @@ public class Main {
 
 
     public static void main(String[] args) {
-
+        beolvasas("harcosok.csv");
+        System.out.println(harcosLista);
+        Harcos harcos = new Harcos("Abc", 2);
         System.out.println("Ei. Egg. Tolyás.");
+
     }
 }
