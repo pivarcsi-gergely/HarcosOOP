@@ -1,7 +1,5 @@
 package hu.petrik;
 
-import javax.print.attribute.HashPrintJobAttributeSet;
-
 public class Harcos {
     private String nev;
     private int szint;
